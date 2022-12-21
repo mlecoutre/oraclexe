@@ -3,3 +3,4 @@
 #Example JDBC connect string with dynamic port allocation: jdbc:oracle:thin:@localhost:${{ job.services.oracle.ports[1521] }}/XEPDB
 #docker run   -e  gvenzl/oracle-xe -d -p1521:1521  -v oracle-volume:/home/mat/repo/oracle/oracle-xe
 docker run   -e ORACLE_RANDOM_PASSWORD=yes gvenzl/oracle-xe -d -p1521:1521   -v /home/mat/repo/oracle/init_scripts:/container-entrypoint-initdb.d
+docker run --name test -p 1521:1521   -e ORACLE_RANDOM_PASSWORD="y" -v /home/mat/repo/oracle/init_scripts:/container-entrypoint-initdb.d gvenzl/oracle-xe:latest

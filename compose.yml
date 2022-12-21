@@ -8,9 +8,12 @@
 
         # Provide passwords and other environment variables to container
         environment:
-          ORACLE_RANDOM_PASSWORD: true
+          #ORACLE_RANDOM_PASSWORD: true
+          ORACLE_PASSWORD: oracle
           APP_USER: mat
           APP_USER_PASSWORD: isanizard
+          ORACLE_ALLOW_REMOTE: true
+          ORACLE_DATABASE: MYDB
 
         # Forward Oracle port
         ports:
@@ -18,6 +21,10 @@
 
         expose:
           - "1521"
+
+        volumes:
+        - /home/mat/repo/oracle/init_scripts:/container-entrypoint-initdb.d
+
         # Provide healthcheck script options for startup
         #options: >-
          # --health-cmd healthcheck.sh

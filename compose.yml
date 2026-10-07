@@ -10,8 +10,8 @@
         environment:
           #ORACLE_RANDOM_PASSWORD: true
           ORACLE_PASSWORD: oracle
-          APP_USER: mat
-          APP_USER_PASSWORD: isanizard
+          APP_USER: maxxxt
+          APP_USER_PASSWORD: xxxxx
           ORACLE_ALLOW_REMOTE: true
           ORACLE_DATABASE: MYDB
 
